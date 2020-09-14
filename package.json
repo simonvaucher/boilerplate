@@ -1,0 +1,22 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate for Express (server) + React (web framework) + Webpack (dev tool + client code transpiler).",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "server": "node server/index.js",
+    "start": "DEBUG=xpress:* nodemon --watch *.js --inspect ./server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Simon Vaucher",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
