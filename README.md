@@ -10,13 +10,14 @@
 
 ### Goal
 
-- Simple aggregator?
+- Fullstack example - from server to css
 
 ### Production / real world stuff
 
 - Check `bin/deploy.sh`
 
-### Nice to have (not really needed in an aggregator...)
+### Nice to have
 
 - User management
 - DB usage
+- Blog aggregator powered by server side
