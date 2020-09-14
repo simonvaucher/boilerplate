@@ -1,5 +1,6 @@
 # Well, we don't want to push that :)
 node_modules
+private
 
 # IDE configuration
 .vscode
