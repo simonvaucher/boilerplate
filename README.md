@@ -6,7 +6,7 @@
 
 - `npm install`
 - `npm start`
-- Visit [localhost:3003](localhost:3003)
+- Visit [localhost:3003](http://localhost:3003)
 
 ## Goal
 
