@@ -2,6 +2,12 @@
 
 - Based on this tutorial: https://dev.to/kedar9/creating-a-node-app-with-react-webpack-4-babel-7-express-and-sass-3mae
 
+# TL; DR;
+
+- `npm install`
+- `npm start`
+- Visit [localhost:3003])(localhost:3003)
+
 ## Goal
 
 - Simple aggregator?
