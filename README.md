@@ -7,6 +7,7 @@
 - `npm install`
 - `npm start`
 - Visit [localhost:3003](http://localhost:3003)
+- Any change in the server code / react side should trigger a webpack build or an express server restart
 
 ### Goal
 

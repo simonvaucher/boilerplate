@@ -1,6 +1,7 @@
 const mockResponse = {
   foo: "bar",
   bar: "baz",
+  egg: "ham",
 };
 
 function mount(app) {

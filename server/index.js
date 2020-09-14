@@ -11,11 +11,10 @@ const port = process.env.port || 3003;
 // API routes are mounted separately
 routes.mount(app);
 
-// Production: serve webpack artifacts from static folder
+// use webpack artifacts from static folder
 app.use(express.static(DIST_DIR));
 
 app.get("/", (_req, res) => {
-  // res.status(200).send("Hello World!");
   res.sendFile(HTML_FILE);
 });
 
