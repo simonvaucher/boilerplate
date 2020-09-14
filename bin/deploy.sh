@@ -1,4 +1,13 @@
 #!/bin/sh
+#
+# Deploy a branch to production - assuming:
+# - Machine is accessible via ssh
+# - node + npm + pm2 + nginx are installed and configured
+# - "boilerplate" repo is installed at /USER/boilerplate
+#
+# Usage:
+# - ssh << user@IP >> 'bash -s' < bin/deploy.sh
+#
 
 DEFAULT_BRANCH=master
 
