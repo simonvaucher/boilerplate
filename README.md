@@ -6,7 +6,7 @@
 
 - `npm install`
 - `npm start`
-- Visit <a href="http://localhost:3003" target="_blank">localhost:3003</a>
+- Visit [localhost:3003](http://localhost:3003)
 
 ## Goal
 
