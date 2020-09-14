@@ -8,9 +8,13 @@
 - `npm start`
 - Visit [localhost:3003](http://localhost:3003)
 
-## Goal
+### Goal
 
 - Simple aggregator?
+
+### Production / real world stuff
+
+- Check `bin/deploy.sh`
 
 ### Nice to have (not really needed in an aggregator...)
 
