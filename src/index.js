@@ -5,7 +5,7 @@ import GRADIENT from "../static/images/gradient.png";
 
 const Index = () => {
   return (
-    <div class="container">
+    <div className="container">
       <h1> React Starting Point</h1>
       <br />
       <img src={GRADIENT} alt="A small gradient square" />
