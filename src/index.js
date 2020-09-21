@@ -17,6 +17,7 @@ const Index = () => {
 
   return (
     <div className="container">
+      <h2 className="site-title">Aggregator Example</h2>
       <Aggregator />
     </div>
   );

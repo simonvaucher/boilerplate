@@ -1,19 +1,23 @@
 body {
-  font: 13px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 200;
+  font-family: -apple-system, “Roboto”, “Oxygen”, “Ubuntu”, “Cantarell”,
+    “Fira Sans”, “Droid Sans”, “Helvetica Neue”, sans-serif;
 }
 
 a {
-  color: #00b7ff;
+  color: darkblue;
+  text-decoration: none;
 }
 
 .container {
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
 
-  .feeds {
-    background-color: #fff;
+  .content {
+    flex-grow: 1;
+    overflow: auto;
     max-width: 97.5vw;
 
     img {

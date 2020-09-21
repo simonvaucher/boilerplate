@@ -3,28 +3,42 @@ import React from "react";
 class Aggregator extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { feeds: [] };
+    this.state = { feeds: [], initialState: true };
   }
 
   componentDidMount() {
     fetch("/api/feeds")
       .then(res => res.json())
       .then(result => {
-        this.setState({ feeds: result.items.slice(0, 2) });
+        this.setState({
+          initialState: false,
+          result,
+        });
       });
   }
 
   render() {
-    const { feeds } = this.state;
+    const { result, initialState } = this.state;
+
+    if (initialState) {
+      return <div>💤 Fetching RSS feeds… 💤</div>;
+    }
 
     return (
-      <div className="feeds">
-        {feeds.map((feed, key) => {
+      <div className="content">
+        <h5>
+          <a href={result.link}>{result.title}</a>
+        </h5>
+        {result.items.slice(0, 2).map((feed, key) => {
           return (
-            <div
-              key={key}
-              dangerouslySetInnerHTML={{ __html: feed["content:encoded"] }}
-            />
+            <div key={key}>
+              <h4>
+                <a href={feed.link}>{feed.title}</a>
+              </h4>
+              <div
+                dangerouslySetInnerHTML={{ __html: feed["content:encoded"] }}
+              />
+            </div>
           );
         })}
       </div>
