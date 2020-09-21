@@ -38,6 +38,7 @@ class Aggregator extends React.Component {
               <div
                 dangerouslySetInnerHTML={{ __html: feed["content:encoded"] }}
               />
+              <hr />
             </div>
           );
         })}
