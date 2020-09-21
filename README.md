@@ -22,3 +22,4 @@
 - User management
 - DB usage
 - Blog aggregator powered by server side
+- Save user preference for font size in localStorage (100% public, not secure)

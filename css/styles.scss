@@ -1,5 +1,4 @@
 body {
-  padding: 22px;
   font: 13px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -13,8 +12,14 @@ a {
   justify-content: center;
   flex-direction: column;
 
-  img {
-    width: 50px;
-    height: 50px;
+  .feeds {
+    background-color: #fff;
+    max-width: 97.5vw;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
   }
 }
