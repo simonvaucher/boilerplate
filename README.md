@@ -19,7 +19,8 @@
 
 ### Nice to have
 
-- User management
-- DB usage
-- Blog aggregator powered by server side
+- [ ] User management
+- [ ] DB usage
+- [ ] Modern React with hooks
+- [ ] Blog aggregator powered by server side
 - Save user preference for font size in localStorage (100% public, not secure)
