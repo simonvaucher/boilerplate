@@ -1,35 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-class Aggregator extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { feeds: [], initialState: true };
-  }
+const loadingMessage = <div>💤 Fetching RSS feeds… 💤</div>;
+const errorMessage = (error) => <div>{JSON.stringify(error)}</div>;
 
-  componentDidMount() {
+const Aggregator = () => {
+  const [isLoading, setLoading] = useState(true);
+  const [responseError, setErrors] = useState(false);
+  const [feeds, setFeeds] = useState({});
+
+  function fetchFeeds() {
     fetch("/api/feeds")
-      .then(res => res.json())
       .then(result => {
-        this.setState({
-          initialState: false,
-          result,
-        });
-      });
+        if (!result.ok) throw result;
+        return result.json();
+      })
+      .then(result => {
+        setLoading(false);
+        setFeeds(result);
+      })
+      .catch(error => {
+        window.foo = error;
+        setErrors(error);
+      })
   }
 
-  render() {
-    const { result, initialState } = this.state;
 
-    if (initialState) {
-      return <div>💤 Fetching RSS feeds… 💤</div>;
-    }
+  useEffect(() => {
+    fetchFeeds();
+  }, []);
 
-    return (
+  return (
+    <div>
+      { isLoading && loadingMessage }
+      { responseError && errorMessage(responseError) }
       <div className="content">
         <h5>
-          <a href={result.link}>{result.title}</a>
+          <a href={feeds.link}>{feeds.title}</a>
         </h5>
-        {result.items.slice(0, 2).map((feed, key) => {
+        {feeds.items && feeds.items.slice(0, 2).map((feed, key) => {
           return (
             <div key={key}>
               <h4>
@@ -43,8 +51,8 @@ class Aggregator extends React.Component {
           );
         })}
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default Aggregator;

@@ -22,6 +22,10 @@ function mount(app) {
       next(e);
     }
   });
+
+  app.get("/api/error", async (req, res) => {
+    return res.status(400).json({status: 400, message: "MOCK ERROR"});
+  });
 }
 
 module.exports = { mount };
