@@ -1,5 +1,7 @@
 const Aggregator = require("./Aggregator");
 
+const { User, Blog, Tag } = require("./sequelize");
+
 const mockResponse = {
   foo: "bar",
   bar: "baz",
@@ -23,8 +25,19 @@ function mount(app) {
     }
   });
 
+  // CREATE user
+  app.post("/api/users", (req, res) => {
+    console.log(req.body);
+    User.create(req.body).then(user => res.json(user));
+  });
+
+  // SELECT * from 'users'
+  app.get("/api/users", (req, res) => {
+    User.findAll().then(users => res.json(users));
+  });
+
   app.get("/api/error", async (req, res) => {
-    return res.status(400).json({status: 400, message: "MOCK ERROR"});
+    return res.status(400).json({ status: 400, message: "MOCK ERROR" });
   });
 }
 
