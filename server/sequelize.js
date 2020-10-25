@@ -5,7 +5,7 @@ const UserModel = require("./models/user");
 const BlogModel = require("./models/blog");
 const TagModel = require("./models/tag");
 
-const sequelize = new Sequelize(process.env.BOILDERPLATE_CONN_STRING, {
+const sequelize = new Sequelize(process.env.BOILERPLATE_CONN_STRING, {
   dialect: "mysql",
   pool: {
     max: 10,
