@@ -1,4 +1,4 @@
-const config = require("dotenv").config();
+const config = require("dotenv").config({ path: __dirname + "/.env" });
 
 const Sequelize = require("sequelize");
 const UserModel = require("./models/user");
