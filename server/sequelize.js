@@ -1,11 +1,11 @@
-const config = require("dotenv").config({ path: __dirname + "/.env" });
+require("dotenv").config({ path: __dirname + "/../.env" });
 
 const Sequelize = require("sequelize");
 const UserModel = require("./models/user");
 const BlogModel = require("./models/blog");
 const TagModel = require("./models/tag");
 
-const sequelize = new Sequelize(config.parsed.BOILERPLATE_CONN_STRING, {
+const sequelize = new Sequelize(process.env.BOILERPLATE_CONN_STRING, {
   dialect: "mysql",
   pool: {
     max: 10,
